@@ -1,0 +1,7 @@
+﻿ID,TYPE,COMMIT #,STATUS,DESCRIPTION,REPORTER,ASSIGNEE,DUE,CREATED,RESOLVED,NOTES
+1,task,f42c16d,closed,Phase I: Task 1,,Garon,6-Oct,2-Oct,4-Oct,
+2,task,e99cbfa,closed,Phase I: Task 2,,Liam,9-Oct,4-Oct,9-Oct,
+3,task,,open,Phase I: Task 3,,Astrid,12-Oct,8-Oct,,
+4,issue,0bbef19,closed,file.cpp - read data is corrupted,Liam,Garon,9-Oct,6-Oct,9-Oct,incorrect delimiter was used
+5,task,,open,Phase II: Task 1,,Astrid,16-Oct,13-Oct,,
+6,issue,,open,driver.cpp - container class not found,Garon,Garon,10-Oct,9-Oct,,
