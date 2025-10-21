@@ -2,7 +2,7 @@
 #include <fstream> 
 #include <sstream> 
 
-void read(std::string &data, IntArray &a)
+void read(const std::string &data, IntArray &a)
 {
     std::ifstream file(data);
     std::string line;
