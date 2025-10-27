@@ -21,13 +21,13 @@ int IntArray::maxSize()
 void IntArray::reserve(int n)
 {
     if (n>maxValues){
-        int *newData = new int[n]{};
+        int *newData = new int[maxValues*2+1]{};
         for(int i = 0; i<numValues; ++i){
             newData[i] = data[i];
         }
         delete [] data;
         data = newData;
-        maxValues = n;
+        maxValues = maxValues*2+1;
     }
 }
 void IntArray::clear()
@@ -40,7 +40,7 @@ void IntArray::clear()
 void IntArray::push_back(int value)
 {
     if(numValues>=maxValues){
-        reserve(maxValues*2);
+        reserve(maxValues);
     }
     data[numValues]=value;
     ++numValues;

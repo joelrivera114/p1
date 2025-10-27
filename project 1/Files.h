@@ -3,6 +3,6 @@
 #include <iostream>
 #include "IntArray.h"
 
-void read(const std::string &data, IntArray &a);
+void read(IntArray& data);
 
 #endif 

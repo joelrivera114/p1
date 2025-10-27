@@ -2,9 +2,9 @@
 #include <fstream> 
 #include <sstream> 
 
-void read(const std::string &data, IntArray &a)
+void read(IntArray& data)
 {
-    std::ifstream file(data);
+    std::ifstream file("Data.csv");
     std::string line;
 
     while(getline(file, line)){
@@ -12,7 +12,8 @@ void read(const std::string &data, IntArray &a)
         std::stringstream parse(line);
         while(getline(parse,token,',')){
             int value = std::stoi(token);
-            a.push_back(value);
+            data.push_back(value);
         }
     }
+    file.close();
 }
