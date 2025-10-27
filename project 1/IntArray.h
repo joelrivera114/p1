@@ -2,6 +2,7 @@
 #define INTARRAY_H
 #include <iostream>
 
+
 class IntArray {
 private:
 int maxValues;
@@ -18,7 +19,10 @@ void reserve(int n);
 void clear();
 void push_back(int value);
 void print();
+
+x
 };
+
 
 
 #endif 

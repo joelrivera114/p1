@@ -1,4 +1,5 @@
 #include "IntArray.h"
+#include <cassert>
 
 IntArray::IntArray():maxValues(5), numValues(0), data(new int[5]{})
 {}
@@ -51,4 +52,54 @@ void IntArray::print()
         std::cout<<data[i]<<" ";
     }
     std::cout<<std::endl;
+}
+//phase 2
+int IntArray::at(int index)
+{
+    assert(index >= 0 && index < numValues);
+    return data[index];
+}
+void IntArray::resize(int n)
+{
+    assert(n>=0);
+    if( n < numValues){
+        numValues = n; 
+    } else if(n > numValues){
+        if(n>maxValues){
+            reserve(n);
+        }
+        for(int i = numValues; i < n; ++i){
+            data[i]= 0;
+        }
+        numValues = n;
+    }
+}
+void IntArray::pop_back()
+{
+    assert(numValues>0);
+    --numValues;
+}
+void IntArray::insert(int value, int index)
+{
+    assert(index >= 0 && index <= numValues);
+    if(numValues == maxValues){
+        reserve(maxValues);
+    }
+    for(int i = numValues-1; i >= index; --i){
+        data[i+1]= data[i];
+    }
+    data[index] = value;
+    ++numValues;
+}
+void IntArray::erase(int start, int end)
+{
+    /*parameters: start (start index), end (end index)
+Validate start and end index values with an assertion.
+Erase array values from index start up to and including index end.*/
+    assert(numValues>0 && start >=0 && end <numValues);
+    int count = end-start+1;
+    for(int i = end+1; i <numValues; ++i){
+        data[i-count] = data[i];
+    }
+    numValues -= count;
 }
