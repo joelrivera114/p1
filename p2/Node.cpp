@@ -3,5 +3,5 @@
 
 Node::Node(): data(0), next(nullptr) 
 {}                      
-Node::Node(const int &d): data(d), next(nullptr)
+Node::Node(const Employee &d): data(d), next(nullptr)
 {}                                

@@ -1,6 +1,7 @@
 #ifndef ITERATOR_H
 #define ITERATOR_H
 #include "Node.h"
+#include "Employee.h"
 
 class Iterator {
 private:
@@ -11,7 +12,7 @@ friend class List;
 Iterator(Node *n);
 void next();
 bool hasNext(); 
-int& getData();
+Employee& getData();
 };
 
 #endif

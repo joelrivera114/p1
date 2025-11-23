@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Iterator.h"
-#include "Node.h"
 
 Iterator::Iterator(Node *n): current(n)       // point iterator to specific node
 {}
@@ -16,7 +15,7 @@ bool Iterator::hasNext()              // return true if current is a valid node 
         return false;
     }
 } 
-int& Iterator::getData()                // return a reference to the data stored in the current node
+Employee& Iterator::getData()                // return a reference to the data stored in the current node
 { 
     return current->data;
 }

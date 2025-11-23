@@ -34,4 +34,4 @@ bool Equivalent(const Employee &o1, const Employee &o2)
 bool Compare(const Employee &o1, const Employee &o2, bool comparator)
 {
     return comparator && o1.getSalary() <= o2.getSalary();
-}
+} 

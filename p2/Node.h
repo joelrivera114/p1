@@ -1,16 +1,17 @@
 #ifndef NODE_H
 #define NODE_H
+#include "Employee.h"
 
 class Node {
 private:
-int data;                                              
+Employee data;                                              
 Node *next;
 
 public:
 friend class Iterator;
 friend class List;
 Node();                     
-Node(const int &d);                               
+Node(const Employee &d);                               
 };
 
 #endif

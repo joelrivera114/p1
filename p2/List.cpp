@@ -1,8 +1,5 @@
 #include <iostream>
 #include "List.h"
-#include "Node.h"
-#include "Iterator.h"
-
 
 List::List(): head(nullptr), tail(nullptr) {}     // constructor: construct an empty list
 List::~List()                                     // destructor: safe deletion of all nodes in the list
@@ -28,17 +25,17 @@ bool List::empty() {
         return false;
     }
 }
-int& List::front() {
+Employee& List::front() {
     return head->data;
 }
-void List::push_front(const int &d) {
+void List::push_front(const Employee &d) {
     Node *n = new Node(d);                      // point n to a new node                                   
     n->next = head;                        // link n before the first node      
     head = n;                              // n becomes the new first node
 
     if(tail == nullptr) { tail = n; } // if list was empty, n becomes the new last node
 }
-void List::push_back(const int &d){
+void List::push_back(const Employee &d){
     if( empty() ) {                         // if list is empty: push_front and exit
         push_front(d);
         return;
@@ -59,7 +56,7 @@ void List::pop_front(){
         tail = nullptr; 
     }   
 }
-Iterator List::insertAfter(Iterator it, const int &d){   
+Iterator List::insertAfter(Iterator it, const Employee &d){   
     if( empty() || it.current == nullptr) { // if list is empty or iterator invalid, 
         return it;                              // exit and return the original iterator
     }
@@ -99,7 +96,7 @@ void List::duplicate(List &b){
         itr.next();                             // point the iterator to the next node
     }   
 }  
-Iterator List::find(int d){
+Iterator List::find(Employee d){
     Iterator itr = begin();                // point iterator to the first node   
     while( itr.hasNext() ) {                    // advance the iterator through all nodes in list  
         if( itr.getData() == d ) {              // if node n stores the equivalent of d, 

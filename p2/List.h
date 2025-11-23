@@ -2,6 +2,7 @@
 #define LIST_H
 #include "Node.h"
 #include "Iterator.h"
+#include "Employee.h"
 
 class List {
 private:                                               
@@ -14,15 +15,15 @@ List();   // constructor: construct an empty list
 Iterator begin();  
 Iterator end();
 bool empty();
-int& front();
-void push_front(const int &d);
-void push_back(const int &d);  
+Employee& front();
+void push_front(const Employee &d);
+void push_back(const Employee &d);  
 void pop_front();
-Iterator insertAfter(Iterator it, const int &d); 
+Iterator insertAfter(Iterator it, const Employee &d); 
 Iterator eraseAfter(Iterator it);
 void print();
 void duplicate(List &b);  
-Iterator find(int d);              
+Iterator find(Employee d);              
 };
 
 #endif
